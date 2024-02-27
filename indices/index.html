@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obter Índice da Célula Clicada</title>
+</head>
+<body>
+<h2>Obter Índice da Célula Clicada</h2>
+<table id="game-board">
+    <tr>
+        <td data-index="0" onclick="handleCellClick(this)">1</td>
+        <td data-index="1" onclick="handleCellClick(this)">2</td>
+        <td data-index="2" onclick="handleCellClick(this)">3</td>
+    </tr>
+    <tr>
+        <td data-index="3" onclick="handleCellClick(this)">4</td>
+        <td data-index="4" onclick="handleCellClick(this)">5</td>
+        <td data-index="5" onclick="handleCellClick(this)">6</td>
+    </tr>
+    <tr>
+        <td data-index="6" onclick="handleCellClick(this)">7</td>
+        <td data-index="7" onclick="handleCellClick(this)">8</td>
+        <td data-index="8" onclick="handleCellClick(this)">9</td>
+    </tr>
+</table>
+<button onclick="showCellIndex()">Exibir Índice da Última Célula Clicada</button>
+<p id="result"></p>
+
+<script>
+let lastClickedCellIndex = null;
+
+function handleCellClick(cell) {
+    // Obtém o índice da célula clicada
+    lastClickedCellIndex = parseInt(cell.getAttribute("data-index"));
+}
+
+function showCellIndex() {
+    // Exibe o índice da última célula clicada
+    document.getElementById("result").textContent = "O índice da última célula clicada é: " + lastClickedCellIndex;
+}
+</script>
+</body>
+</html>
